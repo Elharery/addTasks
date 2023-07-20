@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tasks</title>
+    <link rel="stylesheet" href="master.css">
+    <style>
+        .parent{
+            width: fit-content;
+            margin: 230px auto;
+        }
+        .show,.showed{
+            margin: 10px;
+            background: #eee;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .show > div{
+            position: relative;
+        }
+        .show > div input{
+            background-color: #eee;
+            border: 0;
+    outline: 0;
+    border-bottom: 1px solid;
+    padding : 2px ;
+        }
+        button{
+            cursor: pointer;
+            background: red;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+        }
+        .show > div button{
+            position: absolute;
+            right: 0;
+        }
+        .showed .task{
+            margin: 10px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .showed .task span{
+            max-width: 80px;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .showed .delete{
+            background: #0075ff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 10px;
+            margin: 0 auto;
+            width: fit-content;
+            display: block;
+            cursor: pointer;
+            display: none;
+        }
+        .showed .task > button{
+            position: absolute;
+            right: 5px;
+        }
+        .show > input:focus > .w{
+            transform: translate(0px, -10px);
+        }
+        .w{
+            transition: 0.3s;
+            position: absolute;
+    left: 0;
+    top: 5px;
+    color: gray;
+    font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="show">
+            <div class="">
+                <input type="text" placeholder="Write">
+                <!-- <article class="w">Write</article> -->
+                <button class="add">Add</button>
+            </div>
+        </div>
+        <div class="showed">
+            <div class="box">
+            <!-- <div class="task">
+                <span></span>
+                <button class="del">delete</button>
+            </div> -->
+            <!-- <span class="delete">Delete</span> -->
+        </div>
+            <!-- <span class="delete">Hide All</span> -->
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
