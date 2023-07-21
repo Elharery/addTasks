@@ -1,5 +1,6 @@
 let inputShow = document.querySelector("input")
 let btn = document.querySelector(".add")
+//
 // let tass = document.querySelector(".d")
 
 // let tasksSpan = document.querySelector("span")
@@ -16,7 +17,12 @@ let btn = document.querySelector(".add")
 let dele = document.querySelector(".delete")
 let show = document.querySelector(".add")
 btn.onclick = function () {
+    let er = document.querySelector(".er")
+    if (inputShow.value === "") {
+        er.style.cssText = "display: block";
+    }
     if (inputShow.value !== "") {
+        er.style.cssText = "display: none";
         let showed = document.querySelector(".box")
         // if (dele.style.display !== "block" && showed.style.display !== "block") {
         //     dele.style.display = "block";
@@ -47,5 +53,4 @@ btn.onclick = function () {
     }
     }
 console.log(dele);
-
 // document.body.appendChild(task)
