@@ -19,10 +19,11 @@ let show = document.querySelector(".add")
 btn.onclick = function () {
     let er = document.querySelector(".er")
     if (inputShow.value === "") {
-        er.style.cssText = "display: block";
+        // er.style.cssText = "display: block";
+        alert("Please Enter A Task")
     }
     if (inputShow.value !== "") {
-        er.style.cssText = "display: none";
+        // er.style.cssText = "display: none";
         let showed = document.querySelector(".box")
         // if (dele.style.display !== "block" && showed.style.display !== "block") {
         //     dele.style.display = "block";
