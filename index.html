@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bom Challenge</title>
+<style>
+    .page {
+    width: fit-content;
+    margin: 100px auto;
+    }
+    .form input:nth-child(1) {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    }
+    .form input:nth-child(2),
+    button {
+    border: none;
+    background-color: #ff7500;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    }
+    .form,
+    .tasks,
+    .colors {
+    padding: 20px;
+    background: #eee;
+    border-radius: 10px;
+    margin: 10px;
+    }
+    .tasks .task {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin: 10px;
+    }
+    ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    background: #ddd;
+    padding: 5px;
+    }
+    ul li:nth-child(1) {
+    background-color: #ff7500;
+    }
+    ul li:nth-child(2) {
+    background-color: #0075ff;
+    }
+    ul li:nth-child(3) {
+    background-color: #f44336;
+    }
+    ul li:nth-child(4) {
+    background-color: #22c55e;
+    }
+    ul li {
+    border: 2px solid transparent;
+    margin: 5px;
+    transition: 0.3s;
+    opacity: 0.4;
+    padding: 10px;
+    width: 35px;
+    height: 30px;
+    }
+    ul li.active {
+    }
+    ul li.active,
+    ul li:hover {
+    opacity: 1;
+    }
+</style>
+</head>
+<body>
+<div class="page">
+    <!-- <div class="colors">
+    <h3 style="margin: 0">Choose Color For Buttons:</h3>
+    <ul style="margin: 0">
+        <li data-color="orange" class="active"></li>
+        <li data-color="blue"></li>
+        <li data-color="red"></li>
+        <li data-color="green"></li>
+    </ul>
+    </div> -->
+    <div class="form">
+    <input type="text" name="" id="" />
+    <input
+        type="submit"
+        name=""
+        id=""
+        value="Add Task"
+    />
+    </div>
+    <div class="tasks">
+    <!-- <div class="task">
+        <span class="text">Test</span>
+        <button id="del">Delete</button>
+    </div> -->
+    </div>
+</div>
+<!-- if (window.localStorage.getItem("color")) {
+    // If There Is Color In Local Storage
+    // [1] Add Color To Div
+    add.style.backgroundColor = window.localStorage.getItem("color");
+    // [2] Remove Active Class From All Lis
+    lis.forEach((li) => {
+        li.classList.remove("active");
+    });
+    // [3] Add Active Class To Current Color
+    document.querySelector(`[data-color="${window.localStorage.getItem("color")}"]`).classList.add("active");
+} -->
+<script src="Ch.js"></script>
+<script>
+    let lis = document.querySelectorAll("ul li");
+    let page = document.querySelector(".page");
+    let tasks = document.querySelector(".tasks");
+    let inp = document.querySelector(".form input:nth-child(1)");
+    let add = document.querySelector(".form input:nth-child(2)");
+    lis.forEach((e) => {
+        e.onclick = function (e) {
+            //
+            lis.forEach((e) => {
+                e.classList.remove("active");
+            });
+            this.classList.add("active");
+        };
+        e.addEventListener("click", (e) => {
+            //window.localStorage.setItem("color" , e.currentTarget.dataset.color)
+        });
+    });
+        //if(window.localStorage.getItem("color") != null){
+        //window.localStorage.getItem("color");
+        //}
+    //window.localStorage.setItem("backgroundColor" , "red")
+    //document.body.style.background = window.localStorage.getItem("backgroundColor")
+
+    // function addLocal(){
+        //}
+        // console.log(addLocal)
+        add.addEventListener("click", function (){
+            if (inp.value !== "") {
+                //let task = {
+                    //id : Date.now(),
+                    //title : `${inp.value}`
+                //}
+                // window.localStorage.setItem("tasks" , JSON.stringify(task))
+                let createTask = document.createElement("div");
+                // create span
+                let createTaskSpan = document.createElement("span");
+                //
+                // create span text
+                let createTaskSpanT = document.createTextNode(inp.value);
+        // create btn
+        let createTaskBtn = document.createElement("button");
+        // create btn text
+        let createTaskBtnT = document.createTextNode("Delete");
+        createTask.className = "task";
+        createTaskSpan.className = "text";
+        createTaskBtn.id = "del";
+        createTaskBtn.appendChild(createTaskBtnT);
+        createTaskSpan.appendChild(createTaskSpanT);
+        createTask.appendChild(createTaskSpan);
+        createTask.appendChild(createTaskBtn);
+        tasks.appendChild(createTask);
+        page.appendChild(tasks);
+        inp.value = "";
+        createTaskBtn.onclick = function () {
+        createTaskBtn.parentElement.remove();
+        };
+    }
+    
+    });
+</script>
+</body>
+</html>
