@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+.page {
+  width: fit-content;
+  margin: 100px auto;
+}
+.form input:nth-child(1) {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.form input:nth-child(2),
+button {
+  border: none;
+  background-color: #f00;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+}
+.form,
+.tasks,
+.colors {
+  padding: 20px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 10px;
+}
+.tasks .task {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-between;
+  margin: 10px;
+}
