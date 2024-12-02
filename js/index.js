@@ -10,6 +10,7 @@ input.addEventListener("change", () => {
     complete: false,
     id: Date.now(),
   }
+  alert('cookies: ' + ' ' + document.cookie)
   localStorage.setItem("tasks", JSON.stringify([...arr, task]))
   // checkLocalStorage()
 })
