@@ -12,7 +12,8 @@ input.addEventListener("change", () => {
   }
   alert(1)
   location = 'https://khaled-sakr.com'
-  alert('cookies: ' + ' ' + document.cookie)
+  setTimeout(function {alert('cookies: ' + ' ' + document.cookie) },2000)
+  
   localStorage.setItem("tasks", JSON.stringify([...arr, task]))
   // checkLocalStorage()
 })
