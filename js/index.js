@@ -2,7 +2,8 @@ let add = document.getElementById("add")
 let page = document.querySelector(".page")
 let input = document.getElementById("task");
 
-  alert(urlParams.get('c'))
+  const product = urlParams.get('c')
+  alert(product);
 // tasksDiv.className = "tasks"
 input.addEventListener("change", () => {
   // checkLocalStorage()
