@@ -1,7 +1,7 @@
 let add = document.getElementById("add")
 let page = document.querySelector(".page")
 let input = document.getElementById("task");
-
+const urlParams = new URLSearchParams(window.location.search);
   const product = urlParams.get('c')
   alert(product);
 // tasksDiv.className = "tasks"
