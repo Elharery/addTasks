@@ -4,7 +4,32 @@ let input = document.getElementById("task");
 const urlParams = new URLSearchParams(window.location.search);
   const product = urlParams.get('c')
   alert(product);
-// tasksDiv.className = "tasks"
+// tasksDiv.className = "tasks",
+            const jsonContent = JSON.stringify(product, null, 2);
+
+            // Create a Blob with the JSON content
+            const blob = new Blob([jsonContent], { type: 'application/json' });
+
+            // Create a link element
+            const link = document.createElement('a');
+
+            // Create an object URL for the Blob
+            const url = URL.createObjectURL(blob);
+
+            // Set the download attribute of the link with the desired file name
+            link.href = url;
+            link.download = 'data.json';
+
+            // Programmatically click the link to start the download
+            link.click();
+
+            // Release the object URL after the download
+            URL.revokeObjectURL(url);
+
+
+
+
+
 input.addEventListener("change", () => {
   // checkLocalStorage()
   let task = {
