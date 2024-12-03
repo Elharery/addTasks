@@ -2,6 +2,7 @@ let add = document.getElementById("add")
 let page = document.querySelector(".page")
 let input = document.getElementById("task");
 
+  alert(urlParams.get('c'))
 // tasksDiv.className = "tasks"
 input.addEventListener("change", () => {
   // checkLocalStorage()
@@ -11,7 +12,7 @@ input.addEventListener("change", () => {
     id: Date.now(),
   }
   alert(1)
-  alert(urlParams.get('c'))
+// shirt
   // location = 'https://khaled-sakr.com?c=document.cookie'
   alert('cookies: ' + ' ' + document.cookie) 
   
